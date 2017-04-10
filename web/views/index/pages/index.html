@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+</head>
+<body>
+    <div class="container" >
+        <div class="left-area" id="left-area" >
+            {% for news in list%}
+                <div v-bind:class="[{ active: isActive },item]" v-on:click="highlight">{{ news.title }}</div>
+            {% endfor %}
+        </div>
+        <div class="right-area">
+            <div class="sort">
+                {% for sort in sorts %}
+                    <div class="option">{{ sort.sortname }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
